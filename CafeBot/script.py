@@ -16,7 +16,7 @@ def coffe_bot():
         drinks.append(drink)
         while True:
             order_drink = input('Would you like order another drink? (y/n) ')
-            if order_drinl in ['y', 'n']:
+            if order_drink in ['y', 'n']:
                 break
             print('Okay, so I have: ')
 
@@ -33,8 +33,21 @@ def get_drink_type():
         return 'Brewed Coffe'
     elif res == 'b':
         return 'Mocha'
+    elif res == 'c':
+        return order_latte()
+    else:
+        print_message()
+        return get_drink_type()
 
-    print_message()
+def order_mocha():
+    while True:
+        res = input('Would you like to try out our limited-edition peppermint mocha? \n[a] Sure!\n[b] Maybe Next Time \n ')
+        if res == 'a':
+            return 'peppermint mocha'
+        elif res == 'b':
+            return 'mocha'
+        
+print_message()
 
 coffe_bot()
 order_mocha()
